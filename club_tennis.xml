@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<club_tennis xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="club_tennis.xsd">
+
+    <joueur licence="T785" categorie="adulte">
+        <nom>Martin Dupont</nom>
+        <classement>15</classement>
+        <entraineur>Sophie Bernard</entraineur>
+        <match><adversaire>Laura Petit</adversaire><score>6-4, 6-3</score></match>
+        <match><adversaire>Thomas Leroy</adversaire><score>7-5, 4-6, 6-2</score></match>
+    </joueur>
+
+    <joueur licence="T342" categorie="junior">
+        <nom>Emma Laurent</nom>
+        <classement>30</classement>X
+        <entraineur>Pierre Moreau</entraineur>
+        <match><adversaire>Lucas Dubois</adversaire><score>6-2, 6-1</score></match>
+    </joueur>
+
+    <entraineur>
+        <nom>Sophie Bernard</nom>
+        <specialite>simple dames</specialite>
+        <joueur ref="T785"/>
+    </entraineur>
+
+    <entraineur>
+        <nom>Pierre Moreau</nom>
+        <specialite>juniors</specialite>
+        <joueur ref="T342"/>
+    </entraineur>
+
+</club_tennis>

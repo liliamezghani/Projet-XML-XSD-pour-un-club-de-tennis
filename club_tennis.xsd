@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Élément racine -->
+    <xs:element name="club_tennis" type="ClubType"/>
+
+    <!-- Type complexe pour le club -->
+    <xs:complexType name="ClubType">
+        <xs:sequence>
+            <xs:element name="joueur" type="JoueurType" maxOccurs="unbounded"/>
+            <xs:element name="entraineur" type="EntraineurType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Type complexe pour un joueur -->
+    <xs:complexType name="JoueurType">
+        <xs:sequence>
+            <xs:element name="nom" type="xs:string"/>
+            <xs:element name="classement" type="xs:integer"/>
+            <xs:element name="entraineur" type="xs:string"/>
+            <xs:element name="match" type="MatchType" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="licence" type="xs:string" use="required"/>
+        <xs:attribute name="categorie" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <!-- Type complexe pour un match -->
+    <xs:complexType name="MatchType">
+        <xs:sequence>
+            <xs:element name="adversaire" type="xs:string"/>
+            <xs:element name="score" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Type complexe pour un entraineur -->
+    <xs:complexType name="EntraineurType">
+        <xs:sequence>
+            <xs:element name="nom" type="xs:string"/>
+            <xs:element name="specialite" type="xs:string"/>
+            <xs:element name="joueur" type="JoueurRefType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Type pour la référence joueur dans entraineur -->
+    <xs:complexType name="JoueurRefType">
+        <xs:attribute name="ref" type="xs:string" use="required"/>
+    </xs:complexType>
+
+</xs:schema>
